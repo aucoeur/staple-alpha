@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{ text }}
+
+    {% if user.is_authenticated %}
+        {% include 'staple/partials/auth_home.html' %}
+    {% else %}
+        {% include 'staple/partials/anon_home.html' %}
+    {% endif %}
+
+{% endblock content %}
