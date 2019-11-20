@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ text }}
 
     {% if user.is_authenticated %}
         {% include 'staple/partials/auth_home.html' %}
