@@ -23,10 +23,27 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.8;
     /* Tone the image down further by giving it transparency */
+}
+
+.jumbo-text {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 h1 {
     font-family: 'Alata', sans-serif;
+}
+
+.card {
+    border: 0px;
+}
+
+.container-fluid {
+    margin-bottom: 2rem;
+}
+
+.blurb {
+    background: rgba(255, 255, 255, 1);
+    padding-top: 15px;
 }
