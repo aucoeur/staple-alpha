@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
+
 # Create your views here.
 
 def index(request):
@@ -9,3 +10,7 @@ def index(request):
 
 # class IndexView(generic.ListView):
 #     template_name = 'staple/index.html'
+
+def new_packet(request):
+
+    return render(request, 'new_packet.html')

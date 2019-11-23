@@ -20,7 +20,7 @@
       {% if user.is_authenticated %}
         <div class="text-white">Hello, <strong>{{ user.username }}</strong>!</div>
 
-        <a href="#" class="btn btn-success ml-4">New Packet</a>
+        <a href="{% url 'new-packet' %}" class="btn btn-info ml-4">New Packet</a>
         <a href="{% url 'logout' %}" class="btn btn-danger ml-2">Log Out</a>
       {% else %}
         <a href="{% url 'login' %}" class="btn btn-secondary ml-2">Log In</a>
@@ -28,7 +28,10 @@
       {% endif %}
     </form>
   </nav>
+
     {% block content %}
+      
+      
     <div class="row">
       <div class="col m-4">
         <div class="alert alert-warning" role="alert">
@@ -37,6 +40,9 @@
       </div>
     </div>
     {% endblock %}
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    
     {% if user.is_authenticated %}
         <div class="d-flex" id="wrapper">
             {% include 'partials/sidebar.html' %}
-            {% include 'auth_main.html' %}
+            NEW NEW NEW NEW NEW 
         </div>
     {% else %}
-        {% include 'anon_main.html' %}
+        <div class="container-fluid m-5">       
+            <h3>Please log in or sign up!</h3>
+        </div>
+
     {% endif %}
-    
+
 {% endblock content %}
