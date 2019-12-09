@@ -1,1 +1,1 @@
-web: gunicorn projectname.wsgi --log-file -
+web: gunicorn staple-project.wsgi --log-file -

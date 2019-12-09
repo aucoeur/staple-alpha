@@ -8,6 +8,7 @@ Staple is a simple, shareable file organizer for small groups, made with Python,
 
  **Sprint 1**: [User Narratives & Wireframe](static/files/sprint1.md)   
  **Sprint 2**: [Rough HTML/CSS Prototype](static/files/sprint2.md)
+ **Sprint 3** [Fine HTML/CSS Prototype]()
   
 ---
 ## BEW 1.2 Contractor Project Requirements 
