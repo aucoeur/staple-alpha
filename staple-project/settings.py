@@ -25,7 +25,7 @@ SECRET_KEY = 'co-^t9pikv)3cv6-5huol9wqttp^w#cvw(icyv@e$6^==)ygd)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'staple-acn.herokuapp.com']
 
 
 # Application definition
@@ -131,3 +131,15 @@ STATICFILES_DIRS = [
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+# Required for Heroku
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# PROTIP:
+# Need to override settings? Create a local_settings.py file
+# in this directory, and add settings there.
+try:
+    from makewiki.local_settings import *
+except ImportError:
+    pass
