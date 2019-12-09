@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3>Log In <small class="text-muted">to create your own wiki pages!</small></h3>
+<div class="container-fluid">
+    <h3>Log In <small class="text-muted">to create your own packet!</small></h3>
     <hr>
     <div class="row">
         <div class="col">
             {% if form.errors %}
-                <p>Your username and password didn't match. Please try again.</p>
+            <p>Your username and password didn't match. Please try again.</p>
             {% endif %}
 
             {% if next %}
-                {% if user.is_authenticated %}
-                    <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
-                {% else %}
-                    <p>Please login to see this page.</p>
-                {% endif %}
+            {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.
+            </p>
+            {% else %}
+            <p>Please login to see this page.</p>
+            {% endif %}
             {% endif %}
 
             <form method="post" action="{% url 'login' %}" class="mx-auto">
@@ -40,4 +42,7 @@
             </form>
         </div>
     </div>
+
+</div>
+
 {% endblock %}
