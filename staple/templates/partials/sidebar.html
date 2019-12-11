@@ -1,14 +1,13 @@
 {% block sidebar %}
-    <div class="d-flex" id="wrapper">
-        <div class="bg-dark border-right" id="sidebar-wrapper">
-            <div class="list-group list-group-flush pt-4">
-                <a href="#" class="list-group-item list-group-item-action bg-info text-white mb-4">View All Packets</a>
-                <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 1</a>
-                <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 2</a>
-                <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 3</a>
-                <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 4</a>
-                <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 5</a>
-            </div>
-        </div>
-    </div>
+
+<div class="list-group list-group-flush sticky-top bg-dark pt-4" id="sidebar-wrapper">
+    <a href="{% url 'documents-list-page' %}" class="list-group-item list-group-item-action bg-info text-white mb-4">View All
+        Packets</a>
+    <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 1</a>
+    <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 2</a>
+    <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 3</a>
+    <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 4</a>
+    <a href="#" class="list-group-item list-group-item-action bg-secondary text-white">Packet 5</a>
+</div>
+
 {% endblock sidebar %}

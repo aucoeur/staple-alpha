@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex">
+    {% include 'partials/sidebar.html' %}
+    {% load static %}
+    <div class="container-fluid">
+        <h3>Documents {% if documents %}<small class="text-muted">({{ documents|length }}
+                Document{{ documents|length|pluralize:"s" }})</small>{% endif %}</h3>
+        <hr>
+        <center><img src="{% static 'staple/images/maked.jpg' %}" width="50%" height="50%"></center>
+        <br /><br />
+        {% if documents %}
+        <div class="card-columns">
+            {% for document in documents %}
+            {% include "partials/card.html" %}
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="alert alert-primary" role="alert">No pages to display.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

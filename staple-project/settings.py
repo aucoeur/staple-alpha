@@ -125,13 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Uncomment this for runserver/comment out other one
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
-# uncomment this for heroku/comment out other one
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"

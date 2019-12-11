@@ -2,7 +2,7 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="d-flex" id="wrapper">
+        <div class="d-flex">
             {% include 'partials/sidebar.html' %}
             {% include 'auth_main.html' %}
         </div>
