@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="d-flex">
-{% include 'partials/sidebar.html' %}
+{% include 'staple/partials/sidebar.html' %}
 {% load static %}
 <div class="container-fluid">
   <div class="row">
@@ -10,6 +10,8 @@
       <h3>{{ document.title }} </h3>
         <br>
         <small class="text-muted">Created {{ document.created|date:"SHORT_DATETIME_FORMAT" }} | Last updated {{ document.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ document.author.username }}</b></small>
+      <hr>
+      <a href="{% url 'document-update-page' document.slug %}">Edit This Document</a>
       <hr>
       <p>{{ document.content|linebreaksbr }}</p>
       <hr>

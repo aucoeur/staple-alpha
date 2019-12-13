@@ -3,11 +3,11 @@
 {% block content %}
     {% if user.is_authenticated %}
         <div class="d-flex">
-            {% include 'partials/sidebar.html' %}
-            {% include 'auth_main.html' %}
+            {% include 'staple/partials/sidebar.html' %}
+            {% include 'staple/auth_main.html' %}
         </div>
     {% else %}
-        {% include 'anon_main.html' %}
+        {% include 'staple/anon_main.html' %}
     {% endif %}
     
 {% endblock content %}

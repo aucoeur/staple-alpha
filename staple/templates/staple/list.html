@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="d-flex">
-    {% include 'partials/sidebar.html' %}
+    {% include 'staple/partials/sidebar.html' %}
     {% load static %}
     <div class="container-fluid">
         <h3>Documents {% if documents %}<small class="text-muted">({{ documents|length }}
@@ -13,7 +13,7 @@
         {% if documents %}
         <div class="card-columns">
             {% for document in documents %}
-            {% include "partials/card.html" %}
+            {% include "staple/partials/card.html" %}
             {% endfor %}
         </div>
         {% else %}

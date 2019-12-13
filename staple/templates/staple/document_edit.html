@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="d-flex">
-    {% include 'partials/sidebar.html' %}
+    {% include 'staple/partials/sidebar.html' %}
 
     <div class="flex-fill px-4 border-right">
         <h2 class="mt-4">EDIT</h2>
@@ -25,12 +25,7 @@
         </div>
         <br />
         <form method="POST">
-            {% csrf_token %}
-            {% for field in form %}
-            {{ field.label_tag }}<br />
-            {{ field }}<br /><br />
-            {% endfor %}
-            <input class="btn btn-info" type="submit" value="Submit Document">
+            {% include 'staple/partials/form.html' %}
         </form>
         <!-- <textarea id="rawText" class="mt-2" rows="21" cols="45">Not today Satan, not today!</textarea>
             <button class="btn btn-info" id="autoMagic" type="button" onclick="autoMagical()" role="button">Update

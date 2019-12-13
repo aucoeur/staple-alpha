@@ -1,8 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
@@ -12,7 +12,7 @@ from staple.forms import DocumentForm
 
 def index(request):
   text = 'I LIKE FOOD IS POTATOE.'
-  return render(request, 'index.html', {'text': text})
+  return render(request, 'staple/index.html', {'text': text})
 
 # class IndexView(generic.ListView):
 #     template_name = 'staple/index.html'
@@ -24,13 +24,13 @@ def index(request):
 class DocumentNewView(CreateView):
   """ Renders a Create New Page Form """
   # login_url = '/accounts/login'
-  template_name = 'new_packet.html'
+  template_name = 'staple/new_packet.html'
   form_class = DocumentForm
   success_url = '' 
 
   def get(self, request):
     form = DocumentForm()
-    return render(request, 'new_packet.html', {'form': form})
+    return render(request, 'staple/new_packet.html', {'form': form})
 
   def post(self, request):
     if request.method == 'POST':
@@ -38,7 +38,18 @@ class DocumentNewView(CreateView):
       if form.is_valid():
         article = form.save()
         return HttpResponseRedirect(reverse_lazy('document-details-page', args = [article.slug]))
-      return render(request, 'new_packet.html', {'form': form})
+      return render(request, 'staple/new_packet.html', {'form': form})
+
+class DocumentUpdateView(UpdateView):
+  ''' Renders an Edit Document Form'''
+  model = Document
+  template_name = 'staple/document_edit.html'
+  form_class = DocumentForm
+  
+  def get_success_url(self):
+      return reverse('document-details-page', kwargs={
+          'slug': self.object.slug,
+      })
 
 class DocumentListView(ListView):
   '''Renders list of all documents'''
@@ -47,7 +58,7 @@ class DocumentListView(ListView):
   def get(self, request):
     '''GET list of documents'''
     documents = Document.objects.filter().order_by('title')
-    return render(request, 'list.html', { 'documents': documents })
+    return render(request, 'staple/list.html', { 'documents': documents })
 
 class DocumentDetailView(DetailView):
   """ Renders a specific page based on its slug."""
@@ -56,6 +67,6 @@ class DocumentDetailView(DetailView):
   def get(self, request, slug):
       """ Returns a specific wiki page by slug. """
       document = self.get_queryset().get(slug__iexact=slug)
-      return render(request, 'document.html', {
+      return render(request, 'staple/document.html', {
         'document': document
       })

@@ -1,7 +1,7 @@
 from django.urls import path
 # from staple.views import IndexView
 from staple import views
-from staple.views import DocumentDetailView, DocumentNewView, DocumentListView
+from staple.views import DocumentDetailView, DocumentNewView, DocumentListView, DocumentUpdateView
 
 urlpatterns = [
     # path('', IndexView.as_view(), name = 'staple-index'),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('new/', DocumentNewView.as_view(), name = 'new-packet'),
     path('documents/', DocumentListView.as_view(), name = "documents-list-page"),
     path('documents/<str:slug>/', DocumentDetailView.as_view(), name='document-details-page'),
+    path('documents/<str:slug>/update', DocumentUpdateView.as_view(), name = 'document-update-page')
 
 ]
