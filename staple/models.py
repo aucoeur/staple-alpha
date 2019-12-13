@@ -34,10 +34,10 @@ class Document(models.Model):
         # Call save on the superclass.
         return super(Document, self).save(*args, **kwargs)
 
-class FileUpload(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    file = FilerFileField(null=True, blank=True, on_delete=models.SET_NULL)
+# class FileUpload(models.Model):
+#     title = models.CharField(max_length=255)
+#     description = models.TextField()
+#     file = FilerFileField(null=True, blank=True, on_delete=models.SET_NULL)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
