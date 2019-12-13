@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
@@ -50,6 +50,18 @@ class DocumentUpdateView(UpdateView):
       return reverse('document-details-page', kwargs={
           'slug': self.object.slug,
       })
+
+class DocumentDeleteView(DeleteView):
+  '''Renders a Delete thing'''
+  model = Document
+  success_url = reverse_lazy('documents-list-page')
+
+  def get(self, *args, **kwargs):
+      """
+      This has been overriden because by default
+      DeleteView doesn't work with GET requests
+      """
+      return self.delete(*args, **kwargs)
 
 class DocumentListView(ListView):
   '''Renders list of all documents'''

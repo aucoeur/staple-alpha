@@ -11,7 +11,7 @@
         <center><img src="{% static 'staple/images/maked.jpg' %}" width="50%" height="50%"></center>
         <br /><br />
         {% if documents %}
-        <div class="card-columns">
+        <div class="card-deck">
             {% for document in documents %}
             {% include "staple/partials/card.html" %}
             {% endfor %}
