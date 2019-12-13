@@ -5,6 +5,8 @@ from django.utils.text import slugify
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+from filer.fields.image import FilerFileField
+
 # Create your models here.
 class Document(models.Model):
     '''Represents a single document entry'''
@@ -31,3 +33,11 @@ class Document(models.Model):
 
         # Call save on the superclass.
         return super(Document, self).save(*args, **kwargs)
+
+class FileUpload(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    file = FilerFileField(null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.title

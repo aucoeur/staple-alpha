@@ -9,6 +9,11 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 djangorestframework = "*"
+django-filer = "*"
+django-mptt = "*"
+easy-thumbnails = "*"
+django-polymorphic = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

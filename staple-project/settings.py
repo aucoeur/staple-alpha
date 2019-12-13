@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+
     'accounts',
     'staple',
 ]
@@ -138,6 +142,8 @@ LOGOUT_REDIRECT_URL = "/"
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Filer's Canonical URL
+FILER_CANONICAL_URL = 'files/'
 
 # PROTIP:
 # Need to override settings? Create a local_settings.py file
