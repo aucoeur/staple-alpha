@@ -11,5 +11,4 @@ urlpatterns = [
     path('documents/<str:slug>/', DocumentDetailView.as_view(), name='document-details-page'),
     path('documents/<str:slug>/update', DocumentUpdateView.as_view(), name = 'document-update-page'),
     path('documents/<str:slug>/delete', DocumentDeleteView.as_view(), name = 'document-delete'),
-
 ]
