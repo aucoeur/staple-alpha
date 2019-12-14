@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
-from staple.models import Document
+from staple.models import Document, FileUpload
 from staple.forms import DocumentForm
 # Create your views here.
 
@@ -82,3 +82,6 @@ class DocumentDetailView(DetailView):
       return render(request, 'staple/document.html', {
         'document': document
       })
+
+# class FileUploadView(CreateView):
+#   model = FileUpload
