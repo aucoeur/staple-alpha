@@ -11,16 +11,19 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
+API_KEY = os.getenv('PROJECT_API_KEY')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'co-^t9pikv)3cv6-5huol9wqttp^w#cvw(icyv@e$6^==)ygd)'
+SECRET_KEY = API_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
